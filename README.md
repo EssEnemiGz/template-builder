@@ -152,7 +152,7 @@ docker logs bulider_template
 ## Development Setup
 1. Clone the repository
 2. Create and configure `.env` file
-3. Run `docker-compose up -d`
+3. Run `docker-compose build && docker-compose up -d`
 4. Access API at `http://localhost:5555`
 
 The system is now ready for development and testing.
