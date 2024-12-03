@@ -25,14 +25,36 @@ This is a Flask-based backend template with PostgreSQL database integration, con
 
 ## Setup and Installation
 
-### 1. Environment Configuration
+### 1. Installation Script
+The project includes a template installation script that can be run to set up the builder:
+```bash
+./setup.sh
+```
+
+This script will:
+- Install the template-builder to `/usr/local/bin/`
+- Create a `.template-builder` directory in your home folder
+- Copy template files to the installation directory
+
+### Using the Template Builder
+After installation, you can create a new project structure automatically by running:
+```bash
+template-builder
+```
+This command will:
+- Create the basic project structure in your current directory
+- Set up all necessary files and folders as shown in the Project Structure section
+- Create basic Docker configuration files
+- NOTE: Remember to create the `.env` file with the correct environment variables
+
+### 2. Environment Configuration
 Create a `.env` file in the root directory:
 ```env
 DB_PASSWORD=your_secure_password
 ```
 Note: Replace `your_secure_password` with a secure password.
 
-### 2. Starting the Application
+### 3. Starting the Application
 ```bash
 docker-compose build && docker-compose up -d
 ```
@@ -130,12 +152,17 @@ password: from environment variable
 ## Troubleshooting
 
 ### Common Issues
-1. Database Connection Failures
+1. Template Builder Installation
+   - Ensure you have sudo privileges
+   - Verify ~/.template-builder directory exists after installation
+   - Check file permissions on /usr/local/bin/template-builder
+
+2. Database Connection Failures
    - Verify `.env` file exists with correct credentials
    - Ensure PostgreSQL container is running
    - Check port availability (5433)
 
-2. API Errors
+3. API Errors
    - Check request format matches documentation
    - Verify all required fields are present
    - Ensure data meets validation requirements
