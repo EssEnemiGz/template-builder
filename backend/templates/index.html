@@ -4,30 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Backend Template</title>
-    <style>
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        input {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 10px;
-        }
-        button {
-            padding: 10px 20px;
-            margin: 5px;
-            cursor: pointer;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/default.css') }}">
 </head>
 <body>
     <div class="container">
@@ -44,27 +21,18 @@
             <label for="password">Password:</label>
             <input type="password" id="password" name="password">
             
-            <button onclick="createUser({
-                username: document.getElementById('username').value,
-                email: document.getElementById('email').value,
-                password: document.getElementById('password').value
-            })">Create User</button>
-            
-            <button onclick="updateUser({
-                username: document.getElementById('username').value,
-                email: document.getElementById('email').value,
-                password: document.getElementById('password').value
-            })">Update User</button>
+            <button onclick="createUser()">Create User</button>
+            <button onclick="updateUser()">Update User</button>
         </div>
 
         <div class="form-group">
             <h2>Delete User</h2>
             <label for="userId">User ID:</label>
             <input type="number" id="userId" name="userId">
-            <button onclick="deleteUser(document.getElementById('userId').value)">Delete User</button>
+            <button onclick="deleteUser()">Delete User</button>
         </div>
     </div>
 
-    <script src="static/js/script.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 </html>

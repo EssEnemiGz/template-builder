@@ -55,6 +55,7 @@ def validate_user_data(data, require_id=False):
     Returns:
         tuple: (bool, str) - (is_valid, error_message)
     """
+    print(data)
     if not data:
         return False, "No data provided"
         
