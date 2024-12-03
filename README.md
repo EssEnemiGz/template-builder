@@ -34,11 +34,11 @@ Note: Replace `your_secure_password` with a secure password.
 
 ### 2. Starting the Application
 ```bash
-docker-compose up -d
+docker-compose build && docker-compose up -d
 ```
 This will:
 - Start PostgreSQL on port 5433
-- Start Flask application on port 5000
+- Start Flask application on port 5555
 - Initialize the database with the schema from `init.sql`
 
 ## Database Structure
@@ -109,7 +109,7 @@ The system includes validation for:
   - User: admin@localhost.com
 
 - Flask container:
-  - Port: 5000
+  - Port: 5555
   - Development mode enabled
   - Hot-reload supported through volume mounting
 
@@ -153,6 +153,6 @@ docker logs bulider_template
 1. Clone the repository
 2. Create and configure `.env` file
 3. Run `docker-compose up -d`
-4. Access API at `http://localhost:5000`
+4. Access API at `http://localhost:5555`
 
 The system is now ready for development and testing.
