@@ -17,6 +17,12 @@ fi
 
 if [ -f "/usr/local/bin/template-builder" ]; then
     cp -r ~/.template-builder/* .
+    for arg in "$@"; do
+    if [ "$arg" == "--start" ]; then
+        docker-compose build --no-cache && docker-compose up -d
+        exit 0
+    fi
+    done
 else
     echo "Error: No se encontró el archivo template-builder en /usr/local/bin/template-builder"
     exit 1

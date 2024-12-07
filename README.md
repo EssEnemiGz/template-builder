@@ -61,6 +61,15 @@ This will:
 - Start Flask application on port 5555
 - Initialize the database with the schema from `init.sql`
 
+### 4. Arguments
+```bash
+template-builder --start
+```
+
+To install and do the docker build, also you can use this command to start your container.
+
+Note: The `docker-compose build` is flagged as `--no-cache` by default.
+
 ## Database Structure
 The PostgreSQL database includes a `users` table with the following schema:
 ```sql
